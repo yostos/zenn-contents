@@ -4,7 +4,9 @@
   "description": "Zenn への投稿記事の原稿",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "textlint articles/**/*.md books/**/*.md",
+    "lint:fix": "textlint --fix articles/**/*.md books/**/*.md"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,16 @@
   "homepage": "https://github.com/yostos/zenn-contents#readme",
   "dependencies": {
     "zenn-cli": "^0.4.1"
+  },
+  "devDependencies": {
+    "@textlint-rule/textlint-rule-no-invalid-control-character": "^3.0.0",
+    "textlint": "^15.5.1",
+    "textlint-filter-rule-allowlist": "^4.0.0",
+    "textlint-filter-rule-comments": "^1.3.0",
+    "textlint-filter-rule-node-types": "^1.1.0",
+    "textlint-plugin-mdx": "^1.0.2",
+    "textlint-rule-no-mix-dearu-desumasu": "^6.0.4",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
   }
 }

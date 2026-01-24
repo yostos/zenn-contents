@@ -1,0 +1,11 @@
+# lychee configuration
+# https://lychee.cli.rs/
+
+# Root directory for resolving root-relative links (e.g., /images/...)
+root_dir = "."
+
+# Cache results to speed up repeated checks
+cache = true
+
+# Timeout in seconds
+timeout = 30

@@ -71,6 +71,62 @@ Choose emoji based on the main topic of the article (priority order):
 - `articles/` - Markdown files for articles
 - `books/` - Book directories (each book has its own directory)
 
+## Japanese Writing Rules
+
+When writing Japanese articles, follow these rules to pass textlint:
+
+### Sentence endings
+
+- Always end sentences with「。」, never with「：」(colon)
+- Even before lists or code blocks, use「。」
+
+**Bad:**
+```markdown
+以下の手順で実行します：
+
+- 手順1
+- 手順2
+```
+
+**Good:**
+```markdown
+以下の手順で実行します。
+
+- 手順1
+- 手順2
+```
+
+### Other rules
+
+- Do not repeat the same particle (助詞) like「が」or「から」in one sentence
+- Use「ですます」調 in body text,「である」調 in headings and lists
+
+## Linting (textlint)
+
+```bash
+# Check articles and books
+npm run lint
+
+# Auto-fix fixable issues
+npm run lint:fix
+
+# Check specific file
+npx textlint articles/filename.md
+
+# Fix specific file
+npx textlint --fix articles/filename.md
+```
+
+## Commit Message Prefixes
+
+Use these prefixes for commit messages in this repository:
+
+| Prefix | Usage |
+|--------|-------|
+| `content:` | Add or update articles/books (`articles/`, `books/`) |
+| `chore:` | Config files, CI, dependencies |
+| `docs:` | Documentation (`README.md`, `CLAUDE.md`) |
+
 ## Requirements
 
 - Node.js >= 22.0.0 (managed via mise.toml)
