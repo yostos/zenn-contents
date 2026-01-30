@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/yostos/zenn-contents#readme",
   "dependencies": {
-    "zenn-cli": "^0.4.1"
+    "zenn-cli": "^0.4.4"
   },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-invalid-control-character": "^3.0.0",

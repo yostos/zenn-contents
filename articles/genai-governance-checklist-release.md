@@ -1,7 +1,7 @@
 ---
 title: "上司に説明できる生成AIガイドライン──NIST AI RMF準拠120項目チェックリスト"
 emoji: "🤖"
-type: "tech"
+type: "idea"
 topics:
   ["生成AI", "ガバナンス", "リスク管理", "AIガイドライン", "コンプライアンス"]
 published: true
