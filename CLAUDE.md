@@ -96,10 +96,14 @@ When writing Japanese articles, follow these rules to pass textlint:
 - 手順2
 ```
 
+### Writing style (文体)
+
+- Body text (本文): Use「ですます」調
+- Headings and lists (見出し・箇条書き): Use「である」調
+
 ### Other rules
 
 - Do not repeat the same particle (助詞) like「が」or「から」in one sentence
-- Use「ですます」調 in body text,「である」調 in headings and lists
 
 ## Linting (textlint)
 
@@ -116,6 +120,20 @@ npx textlint articles/filename.md
 # Fix specific file
 npx textlint --fix articles/filename.md
 ```
+
+## Writing Style Conversion (文体変換)
+
+Convert between「ですます調」and「である調」while preserving frontmatter and code blocks.
+
+```bash
+# Convert to ですます調 (polite form)
+npm run style:desumasu -- articles/filename.md
+
+# Convert to である調 (plain form)
+npm run style:dearu -- articles/filename.md
+```
+
+Note: The file is modified in place. Use git to revert if needed.
 
 ## Commit Message Prefixes
 
