@@ -1,14 +1,7 @@
 name: textlint
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'articles/**'
-      - 'books/**'
-      - '.textlintrc'
   pull_request:
-    branches: [main]
     paths:
       - 'articles/**'
       - 'books/**'

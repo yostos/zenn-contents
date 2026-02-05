@@ -1,0 +1,17 @@
+name: Link Check
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Monthly on 1st at 00:00 UTC (09:00 JST)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose articles/**/*.md books/**/*.md
+          fail: true
