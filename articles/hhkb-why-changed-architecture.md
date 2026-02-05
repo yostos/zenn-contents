@@ -4,7 +4,7 @@ emoji: "⌨️"
 type: "idea"
 topics: ["hhkb", "keyboard", "gadget"]
 published: true
-published_at: 2026-02-05 18:30
+published_at: 2026-02-05 15:40
 ---
 
 ## TL;DR
@@ -251,13 +251,13 @@ HHKBの変遷は、「すべてを最高にする」のではなく「何に全�
 | 初代HHKBスイッチ        | メンブレン                              | ✅ 正確                   | [PFU 初代HHKB仕様](https://happyhackingkb.com/jp/products/discontinued/hhkb_kb02/)     |
 | 初代HHKB押下圧          | 約50g                                   | ✅ 正確（50g）            | [PFU 初代HHKB仕様](https://happyhackingkb.com/jp/products/discontinued/hhkb_kb02/)     |
 | 初代HHKBキートップ      | シリンドリカルカーブド                  | ✅ 正確                   | [PFU 高品位キー仕様](https://happyhackingkb.com/jp/products/discontinued/keyspec.html) |
-| HHKB Professional発売年 | 2003年                                  | ✅ 正確（2003年12月）     | [Deskthority HHKB Professional](https://deskthority.net/wiki/HHKB_Professional)        |
-| Professionalスイッチ    | 静電容量無接点                          | ✅ 正確（Topre方式）      | PFU公式、Deskthority                                                                   |
-| Professional押下圧      | 約45g                                   | ✅ 正確                   | [Deskthority HHKB Professional](https://deskthority.net/wiki/HHKB_Professional)        |
+| HHKB Professional発売年 | 2003年                                  | ✅ 正確（2003年5月）      | [PFU HHKB History](https://happyhackingkb.com/jp/history/page4.html)                   |
+| Professionalスイッチ    | 静電容量無接点                          | ✅ 正確（Topre方式）      | [PFU HHKB History](https://happyhackingkb.com/jp/history/page4.html)                   |
+| Professional押下圧      | 約45g                                   | ✅ 正確                   | [PFU HHKB History](https://happyhackingkb.com/jp/history/page4.html)                   |
 | Professionalキートップ  | シリンドリカルステップ                  | ✅ 正確                   | [PFU 高品位キー仕様](https://happyhackingkb.com/jp/products/discontinued/keyspec.html) |
 | IBM Model M発売年       | 1985年                                  | ✅ 正確                   | [Wikipedia Model M](https://en.wikipedia.org/wiki/Model_M_keyboard)                    |
 | Model Mスイッチ         | Buckling Spring                         | ✅ 正確                   | [Wikipedia Model M](https://en.wikipedia.org/wiki/Model_M_keyboard)                    |
-| Topre Realforce         | 2000年代初頭                            | ✅ 正確（2001年6月）      | [Deskthority Topre Realforce](https://deskthority.net/wiki/Topre_Realforce)            |
+| Topre Realforce         | 2000年代初頭                            | ✅ 正確（2001年）         | [東プレ公式](https://www.topre.co.jp/products/elec/keyboards.html)                     |
 | MT3プロファイル         | 1970〜80年代IBMターミナルにインスパイア | ✅ 正確                   | [matt3o MT3 History](https://matt3o.com/mt3-keycap-profile-a-brief-history/)           |
 
 :::
@@ -275,9 +275,9 @@ HHKBの変遷は、「すべてを最高にする」のではなく「何に全�
 - [PFU HHKB公式サイト](https://happyhackingkb.com/jp/)
 - [PFU 初代HHKB仕様](https://happyhackingkb.com/jp/products/discontinued/hhkb_kb02/)
 - [PFU 高品位キー仕様](https://happyhackingkb.com/jp/products/discontinued/keyspec.html)
-- [HHKB Professional - Deskthority](https://deskthority.net/wiki/HHKB_Professional)
+- [PFU HHKB History](https://happyhackingkb.com/jp/history/page4.html)
 - [Model M - Wikipedia](https://en.wikipedia.org/wiki/Model_M_keyboard)
-- [Topre Realforce - Deskthority](https://deskthority.net/wiki/Topre_Realforce)
+- [東プレ キーボード](https://www.topre.co.jp/products/elec/keyboards.html)
 
   :::
 
