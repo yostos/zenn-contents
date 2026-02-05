@@ -204,3 +204,7 @@ tags
 # Local mise config (personal overrides)
 mise.local.toml
 .mise.local.toml
+
+### Draft ###
+# Working directories for drafts (root level only)
+/work*/
