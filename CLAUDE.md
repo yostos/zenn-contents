@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
+**Project Name:** zenn-contents
+
 Repository for managing Zenn articles and books content.
 
 ## Commands
@@ -100,6 +102,12 @@ When writing Japanese articles, follow these rules to pass textlint:
 
 - Body text (本文): Use「ですます」調
 - Headings and lists (見出し・箇条書き): Use「である」調
+
+### Heading rules (見出しルール)
+
+- **レベル3見出し（###）の使用禁止**: 使用する場合は必ずユーザーの許可を得ること
+- **太字を見出し代わりに使用禁止**: `**見出し風テキスト**` のような疑似見出しは禁止
+- セクションを細かく区切りすぎない。シンプルな構成を心がける
 
 ### Other rules
 
