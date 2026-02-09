@@ -1,6 +1,13 @@
 # zenn-contents
 
-Zenn への投稿記事の原稿
+[Zenn](https://zenn.dev/) への投稿記事・書籍の原稿を管理するリポジトリです。
+
+AI支援に[Claude Code](https://claude.ai/code)を使用しています（設定は`CLAUDE.md`を参照）。
+
+## 必要な環境
+
+- Node.js >= 22.0.0（[mise](https://mise.jdx.dev/) で管理）
+- [lychee](https://github.com/lycheeverse/lychee)（リンクチェック用、任意）
 
 ## セットアップ
 
@@ -41,6 +48,16 @@ npx textlint articles/ファイル名.md
 npx textlint --fix articles/ファイル名.md
 ```
 
+## 文体変換
+
+```bash
+# ですます調に変換
+npm run style:desumasu -- articles/ファイル名.md
+
+# である調に変換
+npm run style:dearu -- articles/ファイル名.md
+```
+
 ## リンクチェック (lychee)
 
 ```bash
@@ -58,5 +75,13 @@ lychee articles/ファイル名.md
 
 - `articles/` - 記事のMarkdownファイル
 - `books/` - 本のディレクトリ（本ごとにディレクトリを作成）
+- `images/` - 記事で使用する画像
+- `scripts/` - ユーティリティスクリプト
 - `.textlintrc` - textlint設定ファイル
 - `lychee.toml` - lychee設定ファイル
+
+## ライセンス
+
+- `articles/` 内の記事: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- `books/` 内の書籍: All Rights Reserved
+- その他のコード・設定ファイル: [ISC License](./LICENSE)
