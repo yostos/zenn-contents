@@ -143,6 +143,25 @@ npm run style:dearu -- articles/filename.md
 
 Note: The file is modified in place. Use git to revert if needed.
 
+## Git Operations
+
+- **Main branch**: `main` (default branch, protected)
+- **PR required**: Direct push to main is not allowed
+- **Always create branch first**: Never work directly on main
+- **Branch naming**: `article/<slug>` for new articles, `docs/<topic>` for docs
+- **PR base**: Always use `main` as base branch
+- **Auto-delete**: Branches are automatically deleted after merge
+- **No develop branch**: Do not use develop branch
+
+```bash
+# Always start by creating a new branch
+git checkout main && git pull origin main
+git checkout -b article/<slug>
+
+# After changes, create PR to main
+gh pr create --base main
+```
+
 ## Commit Message Prefixes
 
 Use these prefixes for commit messages in this repository:
