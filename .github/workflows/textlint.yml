@@ -2,25 +2,39 @@ name: textlint
 
 on:
   pull_request:
-    paths:
-      - 'articles/**'
-      - 'books/**'
-      - '.textlintrc'
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for content changes
+        id: changes
+        run: |
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'articles/' 'books/' '.textlintrc')
+          if [ -z "$FILES" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "No content files changed, skipping lint"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Content files changed:"
+            echo "$FILES"
+          fi
 
       - name: Setup Node.js
+        if: steps.changes.outputs.skip == 'false'
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
+        if: steps.changes.outputs.skip == 'false'
         run: npm ci
 
       - name: Run textlint
+        if: steps.changes.outputs.skip == 'false'
         run: npm run lint
