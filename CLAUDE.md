@@ -115,6 +115,8 @@ When writing Japanese articles, follow these rules to pass textlint:
 
 ## Linting (textlint)
 
+**Important: Do NOT run textlint automatically.** Only run textlint when the user explicitly asks for it.
+
 ```bash
 # Check articles and books
 npm run lint
