@@ -1,0 +1,3 @@
+# Disable no-bare-urls rule to prevent wrapping URLs with <>
+config:
+  MD034: false
