@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 **Project Name:** zenn-contents
+**jrnl Project Tag:** zenn-contents
 
 Repository for managing Zenn articles and books content.
 
@@ -114,6 +115,8 @@ When writing Japanese articles, follow these rules to pass textlint:
 - Do not repeat the same particle (助詞) like「が」or「から」in one sentence
 
 ## Linting (textlint)
+
+**Important: Do NOT run textlint automatically.** Only run textlint when the user explicitly asks for it.
 
 ```bash
 # Check articles and books
