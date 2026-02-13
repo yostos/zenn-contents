@@ -193,8 +193,6 @@ Super MAGIは、Claude CodeのAgent Teams機能を活用して、マルチエー
 
 プラグインはGitHubで公開しています。Claude Codeユーザーであれば、インストールして`/magi`コマンドで試すことができます。
 
-https://github.com/yostos/claude-code-plugins
-
 [^agent-teams]: Claude Opus 4.6と同時に発表。1つのセッションがチームリーダーとなり、複数のエージェントをチームメイトとして起動し、`SendMessage`でメッセージを交換できる。詳細は[公式ドキュメント](https://code.claude.com/docs/en/agent-teams)を参照。
 [^self-review]: 実際にSuper MAGIのコンセプト文書と要件定義書もMAGI自身でレビューしており、いずれも3対0の全会一致で承認されています。検証結果はリポジトリの`docs/`ディレクトリに収録しています。
 [^article-review]: 実際にこの記事のレビューで逆転が起きました。当初2対1（B案: 改善が必要）に割れましたが、審議フェーズを経て3対0（A案: 公開に値する）の全会一致に逆転しています。

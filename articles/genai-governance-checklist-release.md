@@ -23,7 +23,7 @@ published: true
 
 **そんなあなたのために、チェックリストを作りました。**
 
-<https://yostos.github.io/genai-governance-checklist/>
+https://yostos.github.io/genai-governance-checklist/
 
 ## このチェックリストの対象
 
@@ -100,7 +100,7 @@ NISTを軸に、国内外の主要基準を横断的に参照しています。
 
 ### 1. チェックリストを開く
 
-<https://yostos.github.io/genai-governance-checklist/>
+[GitHub](https://yostos.github.io/genai-governance-checklist/)からダウンロードください。
 
 全7章・120項目。各項目に「説明」と「定義例」が付いています。まだガイドライン策定に着手してなければ、説明を読んで、これから執筆すべき項目を検討できます。
 
