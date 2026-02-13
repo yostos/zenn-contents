@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 **Project Name:** zenn-contents
+**jrnl Project Tag:** zenn-contents
 
 Repository for managing Zenn articles and books content.
 
