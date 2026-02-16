@@ -34,7 +34,7 @@ jrnl-mcpは、jrnlのデータにClaudeがアクセスできるようにするMC
 
 ## コード解説
 
-開発の詳細は[ブログ記事](https://blog.yostos.org/blog/2025/07/first-mcp-server-development/)に書いたので、ここでは肝となる部分だけ抜粋します。
+開発の詳細は[ブログ記事](https://codedchords.dev/blog/2025/07/first-mcp-server-development/)に書いたので、ここでは肝となる部分だけ抜粋します。
 
 ### ツール定義
 
@@ -240,7 +240,7 @@ jrnl-mcpの価値は、こうした「書いた本人が忘れている文脈」
 
 jrnl-mcpを作ってから、ジャーナルの活用法が変わりました。書きっぱなしだった記録が、Claudeとの対話を通じて振り返りや分析の素材になります。
 
-MCPサーバーの開発自体は、Claude Codeのサポートもあり半日程度で基本機能ができました。既存のCLIツールをラップするパターンなので、複雑な実装は不要でした。開発の詳細に興味がある方は、[ブログ記事](https://blog.yostos.org/blog/2025/07/first-mcp-server-development/)を参照してください。
+MCPサーバーの開発自体は、Claude Codeのサポートもあり半日程度で基本機能ができました。既存のCLIツールをラップするパターンなので、複雑な実装は不要でした。開発の詳細に興味がある方は、[ブログ記事](https://codedchords.dev/blog/2025/07/first-mcp-server-development/)を参照してください。
 
 日常的に使っているCLIツールがあれば、MCPサーバー化を検討してみてください。思わぬ活用法が見つかるかもしれません。
 
@@ -251,4 +251,4 @@ MCPサーバーの開発自体は、Claude Codeのサポートもあり半日程
 - [jrnl-mcp（GitHub）](https://github.com/yostos/jrnl-mcp)
 - [jrnl 公式サイト](https://jrnl.sh/)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
-- [初めてのMCPサーバー開発 - jrnl-mcpを作ってみました（ブログ）](https://blog.yostos.org/blog/2025/07/first-mcp-server-development/)
+- [初めてのMCPサーバー開発 - jrnl-mcpを作ってみました（ブログ）](https://codedchords.dev/blog/2025/07/first-mcp-server-development/)

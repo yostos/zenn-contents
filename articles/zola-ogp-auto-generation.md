@@ -309,7 +309,7 @@ Zolaには画像にテキストを描画する機能がないため、satori + @
 実装の全体像は[GitHubリポジトリの `scripts/` ディレクトリ](https://github.com/yostos/blog-yostos/tree/main/scripts)を参照してください。
 
 :::message
-導入の経緯や運用面の話は[ブログ記事](https://blog.yostos.org/blog/2026/02/ogp-image-generation/)に書いています。
+導入の経緯や運用面の話は[ブログ記事](https://codedchords.dev/blog/2026/02/ogp-image-generation/)に書いています。
 :::
 
 ## 参考リンク

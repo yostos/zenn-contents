@@ -7,7 +7,7 @@ published: true
 ---
 
 :::message
-この記事は[筆者ブログ](https://blog.yostos.org/blog/2026/02/ai-human-divergence/)からの転載です。
+この記事は[筆者ブログ](https://codedchords.dev/blog/2026/02/ai-human-divergence/)からの転載です。
 :::
 
 ## はじめに
