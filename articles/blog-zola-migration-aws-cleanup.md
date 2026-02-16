@@ -8,7 +8,7 @@ published_at: 2026-01-31 19:00
 ---
 
 :::message
-この記事は元々 [blog.yostos.org](https://blog.yostos.org/blog/2026/01/blog-to-zola-aws-cleanup/) で公開されたものの転載です。
+この記事は元々 [codedchords.dev](https://codedchords.dev/blog/2026/01/blog-to-zola-aws-cleanup/) で公開されたものの転載です。
 
 :::
 
