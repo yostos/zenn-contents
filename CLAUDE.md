@@ -132,6 +132,15 @@ npx textlint articles/filename.md
 npx textlint --fix articles/filename.md
 ```
 
+## Link Check (lychee)
+
+Use `lychee` for checking broken links in articles.
+
+```bash
+# Check specific file
+lychee articles/filename.md
+```
+
 ## Writing Style Conversion (文体変換)
 
 Convert between「ですます調」and「である調」while preserving frontmatter and code blocks.
