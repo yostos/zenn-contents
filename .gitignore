@@ -205,6 +205,10 @@ tags
 mise.local.toml
 .mise.local.toml
 
+### lychee ###
+# Link checker cache
+.lycheecache
+
 ### Draft ###
 # Working directories for drafts (root level only)
 /work*/
