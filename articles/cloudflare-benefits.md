@@ -50,7 +50,7 @@ Cloudflareが発行・管理するSSL/TLS証明書と、HTTPS通信に関する�
 | Browser Integrity Check              | 訪問者のHTTPヘッダーを検査して、不正なUser-Agentやスパムボットによく見られる異常なヘッダーパターンを検出し、脅威が見つかった場合はブロックページを表示する。                   |
 | Challenge passage                    | チャレンジ（CAPTCHA等）をクリアした訪問者が、再度チャレンジを求められるまでの有効時間                                                                                          |
 | HTTP DDoS attack protection          | HTTPレイヤーのDDoS攻撃を自動検知・緩和する。無料プランでもCloudflare Free Managed Ruleset（基本的なWAFルール）が付属する                                                       |
-| Manage your robots.txt               | Cloudflare が robots.txt を自動的に管理してくれるβ機能。現在増えているAIクローラーも自分で対応する必要がないので便利                                                           |
+| Manage your robots.txt               | Cloudflare が robots.txt を自動管理するβ機能。Content Signals Policyを選択すると、コンテンツの利用意図を用途別（検索・AI入力・AI学習）に宣言できる                             |
 | Network-layer DDoS attack protection | DDoS保護                                                                                                                                                                       |
 
 ### DNS
@@ -111,6 +111,22 @@ DNS応答の改ざん防止やメールのなりすまし対策など、ドメ�
 | HTTP/2 to Origin                     |            ○             |            −            | オリジンサーバーがある構成でのみ意味がある                            |
 | 0-RTT                                |            ×             |            ×            | 再訪問時の体感速度に差が出る。他のサービスでは無料で提供されていない  |
 
+## AI時代のコンテンツ保護
+
+Cloudflareの無料プランには、AIクローラーに対応する機能が複数用意されています。これらは独立した機能ですが、組み合わせると多層的な防御になります。
+
+| 機能 | レイヤー | 役割 |
+|------|----------|------|
+| Content Signals Policy | 意思表示 | robots.txt内でコンテンツの用途別に許可/拒否を宣言する。強制力はなく、善意あるクローラーへの「お願い」 |
+| Block AI bots | 技術的ブロック | Cloudflareが「AI学習用」と分類するクローラーをWAFレベルでブロックする。検索エンジンやAIアシスタントは対象外 |
+| AI Labyrinth | 欺瞞防御 | ブロックを無視するクローラーに偽コンテンツを読ませ、学習データを汚染させるハニーポット |
+
+ポイントは、Content Signals PolicyとBlock AI botsの役割分担です。Content Signals Policyでは `search=yes, ai-input=yes, ai-train=no` のように宣言し、「検索やAI回答での引用はOKだが、モデルの学習には使うな」という意思を伝えます。しかし宣言はあくまで「お願い」なので、AI学習用クローラーに対してはBlock AI botsがWAFレベルで実際にアクセスを遮断します。それでもすり抜けてくるクローラーにはAI Labyrinthが偽データを食わせます。
+
+さらに、AI Crawl ControlのCrawlersタブではクローラーごとに個別のAllow/Blockを設定できます。たとえば「ChatGPT-Userは許可するがBytespiderはブロックする」といった細かい制御も可能です。
+
+この多層構成により、AI検索からの流入を確保しつつ学習目的のスクレイピングは拒否するという運用が、無料プランだけで実現できます。
+
 ## Cloudflareの評価
 
 比較表を振り返ると、Cloudflareの強みは大きく3つあります。
@@ -119,7 +135,7 @@ DNS応答の改ざん防止やメールのなりすまし対策など、ドメ�
 
 2つ目は、DNS・証明書・セキュリティ・CDNがひとつのダッシュボードに統合されている点です。AWSではRoute 53、CloudFront、ACM、WAFと複数サービスをまたいで設定する必要がありました。GitHub PagesではDNSが外部依存のため、DNSSECやSPF/DMARCの設定は利用するDNSプロバイダ次第でした。Cloudflareではドメイン取得からDNSSEC、メールセキュリティ、デプロイまで一箇所で完結するため、設定の見通しがよく管理も楽です。
 
-3つ目は、他のサービスでは提供されていない独自機能です。AIクローラーに偽コンテンツを食わせるAI Labyrinth、robots.txtの自動管理、Speculation Rules APIを活用したSpeed Brain、TLS 1.3の0-RTT再接続など、比較した他のサービスにはない機能が無料で提供されています。特にAIクローラー対策は今後ますます重要になる領域であり、ワンクリックで対応できるのは大きな安心感があります。
+3つ目は、他のサービスでは提供されていない独自機能です。前述のとおり、Content Signals PolicyからBlock AI bots、AI Labyrinthまで、AIクローラーへの多層的な対応が無料プランだけで揃います。加えて、Speculation Rules APIを活用したSpeed BrainやTLS 1.3の0-RTT再接続など、パフォーマンス面でも独自の機能が提供されています。特にAIクローラー対策は今後ますます重要になる領域であり、「意思表示」と「技術的ブロック」と「欺瞞防御」を組み合わせた構成がワンクリックで手に入るのは大きな安心感があります。
 
 個人の静的サイトという用途では、Cloudflareの無料プランだけで「やりたいことが全部できる」状態になりました。以前はAWSの複数サービスを組み合わせて実現していたことが、Cloudflareではひとつのダッシュボードで、しかも無料で手に入ります。移行してよかったと素直に思います。
 
