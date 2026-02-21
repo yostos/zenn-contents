@@ -3,7 +3,7 @@ title: "もしかしてだけど、あれって日本最古のアスキーアー
 emoji: "🖥️"
 type: "tech"
 topics: ["Go", "ASCIIArt", "8bitPC", "SharpX1", "CLI"]
-published: false
+published: true
 ---
 
 ## はじめに
