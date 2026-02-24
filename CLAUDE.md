@@ -118,6 +118,8 @@ When writing Japanese articles, follow these rules to pass textlint:
 
 **Important: Do NOT run textlint automatically.** Only run textlint when the user explicitly asks for it.
 
+**禁止: ユーザーの許可なく `<!-- textlint-disable -->` を追加してはならない。** textlintエラーが出た場合は、テキスト自体を修正して対処すること。既存の `textlint-disable` コメントを除去・変更する場合も同様にユーザーの許可が必要。
+
 ```bash
 # Check articles and books
 npm run lint
