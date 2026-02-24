@@ -139,4 +139,9 @@ Cloudflareの無料プランには、AIクローラーに対応する機能が�
 
 個人の静的サイトという用途では、Cloudflareの無料プランだけで「やりたいことが全部できる」状態になりました。以前はAWSの複数サービスを組み合わせて実現していたことが、Cloudflareではひとつのダッシュボードで、しかも無料で手に入ります。移行してよかったと素直に思います。
 
+:::message
+続編を書きました。本記事で個別に設定した機能の多くを「Basic Features」ボタン一発で有効化できるという話と、本記事では触れなかった4機能の解説です。
+👉 [Cloudflare無料プランの「Basic Features」ボタン一発で有効になる11機能を全解説](https://zenn.dev/yostos/articles/cloudflare-security2)
+:::
+
 [^2]: Cloudflare Pagesは現在、Cloudflare Workersとの[統合が進んでいる](https://blog.cloudflare.com/pages-and-workers-are-converging-into-one-experience/)。将来的にはWorkersの静的アセット機能に一本化される見込みだが、Pages自体も引き続き利用可能。
