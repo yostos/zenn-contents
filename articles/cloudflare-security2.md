@@ -101,9 +101,14 @@ Hotlink Protectionを有効にすると、Cloudflareはリクエストの`Refere
 
 Hotlink Protectionのブロック条件は、「`Referer`ヘッダーが自サイトのドメインでなく、かつ空でもない場合」です。つまり`Referer`を送信しないクローラーはブロックされませんが、自身のドメインを`Referer`に含めるクローラーはブロック対象になります。
 
-実際に筆者が検証したところ、Blueskyではカード画像が正常に表示されました。BlueskyのカードフェッチャーはRefererを送信しないため、Hotlink Protectionを通過したと考えられます。一方、FacebookやPinterestのクローラーはRefererを送信するため、公式ドキュメントに記載のとおりブロックされます。プラットフォームごとに挙動が異なる点に注意が必要です。
+回避策として、Cloudflareには`hotlink-ok`という名前のディレクトリに配置した画像をHotlink Protectionの対象外にする仕組みがあります。このディレクトリはパス上のどの階層に置いても有効なので、たとえば`/images/hotlink-ok/ogp.png`のように、OGP用画像だけをこのディレクトリにまとめる運用が可能です。
 
-回避策として、Cloudflareには`hotlink-ok`という名前のディレクトリに配置した画像をHotlink Protectionの対象外にする仕組みがあります。このディレクトリはパス上のどの階層に置いても有効なので、たとえば`/images/hotlink-ok/ogp.webp`のように、OGP用画像だけをこのディレクトリにまとめる運用が可能です。
+ただし、ファイル形式により影響が異なります。
+
+| 影響 | 形式 |
+|------|------|
+| ブロック対象 | GIF, ICO, JPG/JPEG, PNG |
+| 対象外 | WebP, AVIF, SVG, PDF, MP4, MP3 |
 
 Cloudflare Pagesで配信している静的サイトの場合、画像はCloudflareのCDN経由で配信されるため帯域コストは発生しません。コンテンツの無断利用を防ぎたい場合には有効にする意味がありますが、OGP画像への影響を考慮したうえで判断してください。
 
