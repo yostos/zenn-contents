@@ -8,7 +8,8 @@
     "lint": "textlint articles/**/*.md books/**/*.md",
     "lint:fix": "textlint --fix articles/**/*.md books/**/*.md",
     "style:desumasu": "node scripts/convert-style.js to-desumasu",
-    "style:dearu": "node scripts/convert-style.js to-dearu"
+    "style:dearu": "node scripts/convert-style.js to-dearu",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,15 @@
   "dependencies": {
     "zenn-cli": "^0.4.5"
   },
+  "lint-staged": {
+    "articles/**/*.md": "textlint",
+    "books/**/*.md": "textlint"
+  },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-invalid-control-character": "^3.0.0",
     "desumasu-converter": "^0.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "textlint": "^15.5.1",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-comments": "^1.3.0",
