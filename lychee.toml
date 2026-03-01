@@ -9,3 +9,8 @@ cache = true
 
 # Timeout in seconds
 timeout = 30
+
+# Exclude URLs that block automated access (e.g., government sites)
+exclude = [
+  "https://www\\.meti\\.go\\.jp/.*",
+]
