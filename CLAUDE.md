@@ -116,7 +116,9 @@ When writing Japanese articles, follow these rules to pass textlint:
 
 ## Linting (textlint)
 
-**Important: Do NOT run textlint automatically.** Only run textlint when the user explicitly asks for it.
+**Pre-commit hook**: husky + lint-staged でコミット時にステージされた `.md` ファイルへ textlint が自動実行される。フックが失敗した場合はテキストを修正して対処すること。`--no-verify` でのスキップは禁止。
+
+**Important: Claude Code から textlint を手動実行しないこと。** コミット時にフックで自動実行されるため、ユーザーが明示的に求めた場合のみ手動実行する。
 
 **禁止: ユーザーの許可なく `<!-- textlint-disable -->` を追加してはならない。** textlintエラーが出た場合は、テキスト自体を修正して対処すること。既存の `textlint-disable` コメントを除去・変更する場合も同様にユーザーの許可が必要。
 
