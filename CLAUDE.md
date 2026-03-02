@@ -168,6 +168,7 @@ Note: The file is modified in place. Use git to revert if needed.
 - **PR base**: Always use `main` as base branch
 - **Auto-delete**: Branches are automatically deleted after merge
 - **No develop branch**: Do not use develop branch
+- **PR前の確認**: PR作成前に記事の `published: true` になっていることを必ず確認する
 
 ```bash
 # Always start by creating a new branch
