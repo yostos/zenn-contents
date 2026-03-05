@@ -20,6 +20,8 @@ https://www.businessinsider.com/amazon-aws-cloud-customers-proserve-consulting-f
 
 ## AWS ProServeとは
 
+AWS ProServeとはAWSの技術支援サービスです。
+
 AWSのユーザーにとっては、「SA」（Solutions Architect）と呼ばれる無償の技術支援のほうが馴染み深いかもしれません。一方、AWS ProServe（Professional Services）は、有償の支援サービスです。
 
 AWSの公式エキスパートが顧客のチームに入り、一緒にプロジェクトを成功させるコンサルティング部門です（ProServeについては[こちらの解説記事](https://note.com/jazzy_slug5355/n/n6d3fa6120c79)が分かりやすいです）。クラウド移行やモダナイゼーションといった技術コンサルティングに加え、DX戦略の策定やビジネス変革の支援まで幅広く対応しています。単なる代行ではなく、顧客が自らAWSを使いこなせるようになる「自走支援」に重点を置いている点が特徴です。
