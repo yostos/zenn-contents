@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/yostos/zenn-contents#readme",
   "dependencies": {
-    "zenn-cli": "^0.4.5"
+    "zenn-cli": "^0.4.6"
   },
   "lint-staged": {
     "articles/**/*.md": "textlint",
