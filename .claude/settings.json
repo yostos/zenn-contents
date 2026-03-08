@@ -1,0 +1,33 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' | grep -qE '\\-\\-no\\-verify' && echo '{\"decision\":\"block\",\"reason\":\"--no-verify は禁止です。textlint エラーはテキストを修正して対処してください\"}' || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' | grep -qE 'git push.* main' && echo '{\"decision\":\"block\",\"reason\":\"main への直接 push は禁止です。ブランチを作成して PR 経由でマージしてください\"}' || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.content // .tool_input.new_string // empty' | grep -qE 'textlint-disable' && echo '{\"decision\":\"block\",\"reason\":\"textlint-disable の追加にはユーザーの許可が必要です\"}' || true"
+          }
+        ]
+      }
+    ]
+  }
+}
