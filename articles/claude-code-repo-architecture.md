@@ -2,8 +2,9 @@
 title: "CLAUDE.mdを太らせない — リポジトリ設計で実現するClaude Codeのガードレールと再現性"
 emoji: "🏗️"
 type: "tech"
-topics: ["ClaudeCode", "GenerativeAI", "開発環境"]
+topics: ["ClaudeCode", "GenerativeAI"]
 published: true
+published_at: 2026-03-08 19:30
 ---
 
 :::message
