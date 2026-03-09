@@ -3,8 +3,7 @@ title: "CLAUDE.mdを太らせない — リポジトリ設計で実現するClau
 emoji: "🏗️"
 type: "tech"
 topics: ["ClaudeCode", "GenerativeAI"]
-published: true
-published_at: 2026-03-10 08:30
+published: false
 ---
 
 :::message
