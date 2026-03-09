@@ -7,54 +7,54 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Project Name:** zenn-contents
 **jrnl Project Tag:** zenn-contents
 
-Zenn の記事・本を管理するリポジトリ。
+Repository for managing Zenn articles and books.
 
-- `articles/` — 記事の Markdown ファイル
-- `books/` — 本のディレクトリ
+- `articles/` — Markdown files for articles
+- `books/` — Book directories
 
 ## Commands
 
 ```bash
-npx zenn preview              # ローカルプレビュー (http://localhost:8000)
-npx zenn new:article          # 新規記事作成
-npx zenn new:book             # 新規本作成
+npx zenn preview              # Local preview (http://localhost:8000)
+npx zenn new:article          # Create new article
+npx zenn new:book             # Create new book
 ```
 
 ## References
 
-詳細は以下を参照。
+See the following for details.
 
-- Frontmatter・Emoji選択: `docs/article-frontmatter.md`
-- 日本語文体ルール・textlint: `docs/writing-rules.md`
+- Frontmatter & Emoji selection: `docs/article-frontmatter.md`
+- Japanese writing rules & textlint: `docs/writing-rules.md`
 
-## Writing Rules（常時適用）
+## Writing Rules (always applied)
 
-- 本文は「ですます」調、見出し・箇条書きは「である」調
-- 文末は「。」で終える（「：」禁止）
-- レベル3見出し（###）はユーザーの許可なく使わない
-- 太字（`**`）を見出し代わりに使わない
-- 同じ助詞を一文で繰り返さない
+- Body text uses polite form (ですます調), headings/lists use plain form (である調)
+- End sentences with "。" (colon "：" is prohibited)
+- Do not use level-3 headings (###) without user permission
+- Do not use bold (`**`) as a substitute for headings
+- Do not repeat the same particle in one sentence
 
 ## Linting
 
-- **Pre-commit hook** で textlint が自動実行される
-- Claude Code から textlint を手動実行しない（ユーザーが明示的に求めた場合のみ）
-- textlint の抑制コメントの追加はユーザーの許可が必要（Hooks でもブロック）
-- `--no-verify` でのスキップは禁止（Hooks でもブロック）
+- **Pre-commit hook** runs textlint automatically
+- Do not run textlint manually from Claude Code (only when explicitly requested by user)
+- Adding textlint suppression comments requires user permission (also blocked by Hooks)
+- Skipping with `--no-verify` is prohibited (also blocked by Hooks)
 
 ## Git Operations
 
-- **Main branch**: `main`（PR 必須、直接 push 禁止。Hooks でもブロック）
-- **Branch naming**: `article/<slug>`（記事）、`docs/<topic>`（ドキュメント）
-- PR 作成前に `published: true` を確認する
+- **Main branch**: `main` (PR required, direct push prohibited; also blocked by Hooks)
+- **Branch naming**: `article/<slug>` (articles), `docs/<topic>` (documentation)
+- Verify `published: true` before creating a PR
 
 ## Commit Message Prefixes
 
 | Prefix | Usage |
 |--------|-------|
-| `content:` | 記事・本の追加・更新 (`articles/`, `books/`) |
-| `chore:` | 設定、CI、依存関係 |
-| `docs:` | ドキュメント (`README.md`, `CLAUDE.md`) |
+| `content:` | Add or update articles/books (`articles/`, `books/`) |
+| `chore:` | Config, CI, dependencies |
+| `docs:` | Documentation (`README.md`, `CLAUDE.md`) |
 
 ## Requirements
 
