@@ -3,7 +3,7 @@ title: "Mac環境のリフレッシュ — MacPawのGUIツールをCLIへ移行�
 emoji: "🖥️"
 type: "tech"
 topics: ["Mac", "macOS", "CLI", "環境構築"]
-published: true
+published: false
 ---
 
 精神と時の部屋のような一年、もとい、成長なんてゼロだったので、無為が無限ループしていた一年も終わるので、見送っていたMac環境のリフレッシュを実施しました。
