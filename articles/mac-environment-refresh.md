@@ -3,10 +3,10 @@ title: "Mac環境のリフレッシュ — MacPawのGUIツールをCLIへ移行�
 emoji: "🖥️"
 type: "tech"
 topics: ["Mac", "macOS", "CLI", "環境構築"]
-published: false
+published: true
 ---
 
-精神と時の部屋のような一年、もとい、成長なんてゼロだったので、無為が無限ループしていた一年も終わるので、見送っていたMac環境のリフレッシュを実施しました。
+見送っていたMac環境のリフレッシュを実施しました。
 
 :::message
 本記事は要約版です。完全版は個人ブログをご覧ください。
@@ -16,7 +16,11 @@ https://codedchords.dev/blog/2026/03/mac-environment-refresh/
 
 ## MacPaw関連ソフトウェアの見直し
 
-CleanMyMac XとGemini 2を使用していましたが、常駐してリソースを消費するのが気になっていました。今回はどちらもアンインストールし、CLI代替ツールに移行しました。
+CleanMyMac[^1] XとGemini 2[^2]を使用していましたが、常駐してリソースを消費するのが気になっていました。今回はどちらもアンインストールし、CLI代替ツールに移行しました。
+
+[^1]: macOSのメンテナンス・ユーティリティ
+
+[^2]: 重複ファイル削除ツール。特に重複画像の検知が優秀
 
 ## Mole — macOSクリーンアップツール
 
@@ -24,20 +28,34 @@ https://github.com/tw93/mole
 
 CleanMyMac Xの代替として導入しました。キャッシュ・ログの削除、アプリの完全アンインストール、ディスク使用量の可視化、リアルタイム監視など、マルウェアスキャン以外の機能をほぼカバーしています。すべてのコマンドで`--dry-run`オプションが使えるため、安心して運用できます。
 
+具体的になコマンドは以下です。
+
+```bash
+mo uninstall  # アプリの完全アンインストール
+mo optimize   # キャッシュ再構築・サービスリフレッシュ
+mo analyze    # ディスク使用量の可視化
+mo status     # CPU/GPU/メモリ/ディスク/ネットワークのリアルタイム監視
+mo purge      # 開発プロジェクトのビルド成果物削除
+mo installer  # Downloads内の.dmg/.pkgの整理
+```
+
 ## Czkawka（チカフカ） — 不要ファイル検出ツール
 
 https://github.com/qarmin/czkawka
 
 Gemini 2の代替として導入しました。名前はポーランド語で「しゃっくり」の意味です。rmlintと異なり、パーセプチュアルハッシュによる類似画像検出をサポートしており、重複ファイル、空フォルダ、破損ファイルなど多彩な検出機能を備えています。
 
-## メニューバーの整理
-
-macOS Tahoeではメニュー構造が変わった影響で、Iceなどサードパーティ製ツールが不安定になっていました。しかしTahoeではメニューバーのカスタマイズ機能が大幅に強化され、アプリごとの表示制御やコントロールセンターへの移動が可能になったため、サードパーティ製ツールは不要になりました。
-
-## ブラウザArcの代替
-
-2025年5月にThe Browser CompanyがArcの開発終了を発表しました。Chrome + 拡張機能で再現を試みましたが本末転倒と気づき、結局Safariに落ち着いています。iCloudとの連携、省電力性能、パスキー対応など、Apple製品で統一している環境であればSafariが最適という結論です。
-
-## まとめ
-
-GUIの常駐アプリをCLIに置き換え、メニューバーをOS標準機能で整理し、ブラウザもSafariに一本化しました。小さな快適さの積み重ねで、深呼吸できた心地がします。
+```bash
+# 重複ファイル検出: -d 検索先 -e 除外先 -m 最小25B -s hash比較 -D aeo(最古以外を削除)
+czkawka_cli dup -d ~/Documents -e ~/Documents/Archive -m 25 -x 7z rar IMAGE -s hash -f results.txt -D aeo
+# 空フォルダ検出: 複数ディレクトリ指定可
+czkawka_cli empty-folders -d ~/Documents ~/Downloads -f results.txt
+# 巨大ファイル検出: -n 上位25件 -x VIDEO拡張子を除外
+czkawka_cli big -d ~/Documents -e ~/Documents/Archive -n 25 -x VIDEO -f results.txt
+# 類似画像検出: パーセプチュアルハッシュで視覚的に似た画像を検出
+czkawka_cli image -d ~/Pictures -e ~/Pictures/Wallpapers -f results.txt
+# 壊れたシンボリックリンク検出
+czkawka_cli symlinks -d ~/Projects -e ~/Projects/.git -x jpg -f results.txt
+# 破損ファイル検出: ヘッダが壊れたファイル等を検出
+czkawka_cli broken -d ~/Downloads -f results.txt
+```
