@@ -8,7 +8,7 @@ published_at: 2026-03-10 09:00
 ---
 
 :::message
-この記事は[筆者のブログ](https://yostos.org/blog/2026/03/claude-code-repo-architecture/)からの転載です。
+この記事は[筆者のブログ](https://codedchords.dev/blog/2026/03/claude-code-repo-architecture/)からの転載です。
 :::
 
 ## CLAUDE.mdが肥大化していませんか
