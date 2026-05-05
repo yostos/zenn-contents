@@ -18,6 +18,7 @@ published: true
 - S3ライフサイクルでGlacier Deep Archiveへ自動降格させる構成。降格・削除の期間はデータの再アクセス特性から逆算して決めるのが肝要
 - IAM最小権限・マルチパート残骸クリーンアップ・Deep Archive最低保管期間180日など運用上のハマりどころも整理
 - 月額数百円のレンジで運用できるコスト試算を提示
+- 認証情報を平文で残さないため、1Password CLI (`op run`) で実行時に環境変数として注入する構成も併記（2026-05-05追記）
 
 ## はじめに
 
@@ -250,8 +251,6 @@ S3では1ファイル内の並列度は `--s3-upload-concurrency` が直接コ�
 ```bash
 caffeinate -i rclone copy ./video/ s3-aws:video-backup/ \
   --transfers 4 \
-  --multi-thread-streams 4 \
-  --multi-thread-cutoff 250M \
   --s3-chunk-size 64M \
   --s3-upload-concurrency 4 \
   --s3-no-check-bucket \
@@ -276,6 +275,72 @@ caffeinate -i rclone copy ./video/ s3-aws:video-backup/ \
 
 ```bash
 sudo pmset -a disablesleep 1   # 蓋を閉じてもスリープしない（作業後は0に戻す）
+```
+
+## 認証情報の管理を1Password CLIに移す（2026-05-05更新）
+
+ここまでの設定では `~/.config/rclone/rclone.conf` にAWSのアクセスキーが平文で残ります。dotfilesで同期したり共用マシンに置く運用では避けたいので、認証情報を [1Password CLI](https://developer.1password.com/docs/cli/) (`op`) に移し、`op run` で実行時に環境変数として注入する構成も用意しました。
+
+`rclone.conf` 側はキーを書かず、`env_auth = true` にしてAWS標準の認証情報チェーン（環境変数→`~/.aws/credentials`→IAMロール）から都度取得する動作に変えます。
+
+```ini:~/.config/rclone/rclone.conf
+[s3-aws]
+type = s3
+provider = AWS
+env_auth = true
+region = ap-northeast-1
+location_constraint = ap-northeast-1
+acl = private
+storage_class = STANDARD
+```
+
+発行済みのキーは1Passwordに保管します。
+
+```bash
+op item create --category="API Credential" \
+  --vault=Private \
+  --title="rclone-backup-aws" \
+  username="AKIA..." \
+  credential="..."
+```
+
+参照用のenvテンプレートを `~/.config/rclone/s3-backup.env` として配置します。`rclone.conf` と同じディレクトリで管理でき、値ではなく `op://...` の参照しか書かれないため、dotfilesに含めて同期しても問題ありません。
+
+```bash:~/.config/rclone/s3-backup.env
+AWS_ACCESS_KEY_ID=op://Private/rclone-backup-aws/username
+AWS_SECRET_ACCESS_KEY=op://Private/rclone-backup-aws/credential
+```
+
+実行時は `op run --env-file` でラップし、`op` が1Passwordから値を取り出して環境変数として注入します。先述の起動例は以下のように書き換わります。
+
+```bash
+op run --env-file="$HOME/.config/rclone/s3-backup.env" -- rclone copy ./video/ s3-aws:video-backup/ \
+  --transfers 2 \
+  --s3-chunk-size 64M \
+  --s3-upload-concurrency 4 \
+  --s3-no-check-bucket \
+  --checksum \
+  --progress \
+  --retries 10 \
+  --low-level-retries 20 \
+  --log-file=rclone-$(date +%Y%m%d-%H%M%S).log \
+  --log-level INFO
+```
+
+`caffeinate` と組み合わせる場合は、`caffeinate` を最外殻に置きます。
+
+```bash
+caffeinate -i op run --env-file="$HOME/.config/rclone/s3-backup.env" -- rclone copy ./video/ s3-aws:video-backup/ \
+  --transfers 4 \
+  --s3-chunk-size 64M \
+  --s3-upload-concurrency 4 \
+  --s3-no-check-bucket \
+  --checksum \
+  --progress \
+  --retries 10 \
+  --low-level-retries 20 \
+  --log-file=rclone-$(date +%Y%m%d-%H%M%S).log \
+  --log-level INFO
 ```
 
 ## まとめ
