@@ -4,7 +4,6 @@ emoji: "🎨"
 type: "tech"
 topics: ["OpenAI", "GenerativeAI", "ChatGPT", "ClaudeCode"]
 published: true
-published_at: 2026-05-15 20:00
 ---
 
 :::message
