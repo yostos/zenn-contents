@@ -10,6 +10,22 @@ cache = true
 # Timeout in seconds
 timeout = 30
 
+# Identify as a browser-like client. The default agent (lychee/x.y.z) is
+# frequently rejected by WAFs such as Cloudflare with 403 or 429.
+user_agent = "Mozilla/5.0 (compatible; lychee link checker)"
+
+# Use GET instead of the default HEAD. Many CDNs and WAFs reject HEAD requests.
+# (The HEAD-to-GET fallback list syntax is not in any release as of v0.24.2.)
+method = "get"
+
+# 429 means "retry later", so be patient before declaring a link dead
+max_retries = 3
+retry_wait_time = 5
+
+# Throttle requests per host so rate limiting is not triggered in the first place
+host_concurrency = 2
+host_request_interval = "500ms"
+
 # Exclude URLs that block automated access (e.g., government sites)
 exclude = [
   "https://www\\.meti\\.go\\.jp/.*",
