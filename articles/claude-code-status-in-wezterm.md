@@ -19,7 +19,7 @@ published: true
 
 ## はじめに
 
-中島聡らが開発している[MulmoTerminal](https://github.com/receptron/mulmoterminal)を少し使ってみました。複数のAIエージェントをブラウザ上のターミナルに並べ、各エージェントの状態を一目で分かるようにしたツールです。私はClaude Codeしか使っていないので全体としてはピンと来ませんでしたが、この状態表示の部分だけは便利だと感じました。
+中島聡氏らが開発している[MulmoTerminal](https://github.com/receptron/mulmoterminal)を少し使ってみました。複数のAIエージェントをブラウザ上のターミナルに並べ、各エージェントの状態を一目で分かるようにしたツールです。私はClaude Codeしか使っていないので全体としてはピンと来ませんでしたが、この状態表示の部分だけは便利だと感じました。
 
 そこで、私が普段使用しているWezTermの画面分割とClaude Codeで同じような通知を可能とする仕組みを作ってみました。
 
