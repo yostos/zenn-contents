@@ -4,7 +4,6 @@ emoji: "🏅"
 type: "tech"
 topics: ["GoogleCloud", "生成AI", "資格", "Gemini", "VertexAI"]
 published: true
-published_at: 2026-09-02 09:00
 ---
 
 :::message
