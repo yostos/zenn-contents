@@ -30,4 +30,5 @@ host_request_interval = "500ms"
 exclude = [
   "https://www\\.meti\\.go\\.jp/.*",
   "https://openai\\.com/.*",
+  "https://www\\.whizlabs\\.com/.*",
 ]

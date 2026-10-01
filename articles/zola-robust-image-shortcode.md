@@ -45,6 +45,10 @@ CLSが悪化する代表的な原因は、画像などの要素にサイズ（`w
 
 そこでZolaのショートコードを利用して、画像サイズなどのメタ情報を自動でセットする仕組みを作りました。以下はコードの抜粋です。
 
+:::message
+Zola 0.23でショートコードは廃止され、Tera Componentsへ移行しました。本記事のコードは0.22以前のZolaを前提としています。
+:::
+
 ```html:templates/shortcodes/image.html
 {%- set colocated_path = page.colocated_path | default(value="") -%}
 {%- set resolved_path = colocated_path ~ src -%}
@@ -193,5 +197,4 @@ Zola依存にはなりますが、記述を複雑にせずCLS対策ができま�
 - Cloudflare. "[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/)"
 - web.dev.「[Cumulative Layout Shift(CLS)](https://web.dev/articles/cls)」
 - web.dev.「[Core Web Vitals](https://web.dev/articles/vitals)」
-- Zola. "[Shortcodes](https://www.getzola.org/documentation/content/shortcodes/)"
 - Zola. "[Overview - get_image_metadata](https://www.getzola.org/documentation/templates/overview/#get-image-metadata)"
