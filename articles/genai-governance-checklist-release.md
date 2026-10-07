@@ -7,6 +7,12 @@ topics:
 published: true
 ---
 
+
+:::message
+この記事は [codedchords.dev](https://codedchords.dev/blog/2026/01/genai-governance-checklist-release/) からの転載です。
+:::
+
+
 :::message
 **更新履歴**
 
