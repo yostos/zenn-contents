@@ -6,6 +6,10 @@ topics: ["CLI", "Markdown", "ClaudeCode", "TDD", "AI駆動開発"]
 published: true
 ---
 
+:::message
+この記事は [codedchords.dev](https://codedchords.dev/blog/2026/01/building-ttt-with-claude-code/) からの転載です。
+:::
+
 ## はじめに
 
 ターミナルで作業中、ふと「あれもやらなきゃ」と思いついたとき、頭の中を書き出す場所が欲しくなります。物理的なメモ用紙ならすぐに書けますが、ターミナルから手を離すのは煩わしい。かといって多機能なTodoアプリを開くと、プロジェクトやタグを考えているうちに書きたかったことを忘れてしまう。
