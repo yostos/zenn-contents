@@ -6,10 +6,12 @@ topics: ["emacs", "ddskk", "日本語入力", "font", "macos"]
 published: true
 ---
 
+![Cover](/images/emacs-init-japanese/cover.webp)
+
 :::message
 この記事は [codedchords.dev](https://codedchords.dev/blog/2026/10/emacs-init-el/01-emacs-init-japanese/) からの転載です。連載「AI時代のEmacs設定術」の第1回です。
 
-- 次回: [AI時代のEmacs設定術(2): Org modeでタスクと情報を管理する](https://codedchords.dev/blog/2026/10/emacs-init-el/02-emacs-init-org/)
+- 次回: [AI時代のEmacs設定術(2): Org modeでタスクと情報を管理する](https://zenn.dev/yostos/articles/emacs-init-org)
 :::
 
 ## はじめに
