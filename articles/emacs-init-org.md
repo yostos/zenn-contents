@@ -12,6 +12,7 @@ published: true
 この記事は [codedchords.dev](https://codedchords.dev/blog/2026/10/emacs-init-el/02-emacs-init-org/) からの転載です。連載「AI時代のEmacs設定術」の第2回です。
 
 - 前回: [AI時代のEmacs設定術(1) - Emacsで日本語を自在に](https://zenn.dev/yostos/articles/emacs-init-japanese)
+- 次回: [AI時代のEmacs設定術(3): EmacsでClaude CodeとLLMを操る](https://zenn.dev/yostos/articles/emacs-init-claude-code)
 :::
 
 <!-- textlint-disable -->
