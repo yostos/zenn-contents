@@ -12,6 +12,7 @@ published: true
 この記事は [codedchords.dev](https://codedchords.dev/blog/2026/10/emacs-init-el/03-emacs-init-claude-code/) からの転載です。連載「AI時代のEmacs設定術」の第3回です。
 
 - 前回: [AI時代のEmacs設定術(2): Org modeでタスクと情報を管理する](https://zenn.dev/yostos/articles/emacs-init-org)
+- 次回: [AI時代のEmacs設定術(4): Emacsでモダンな開発環境を構築する](https://zenn.dev/yostos/articles/emacs-init-dev)
 :::
 
 Claude Codeはターミナルで、LLMはブラウザで使うのが一般的です。Emacsなら、どちらもバッファの中で扱えます。編集中のファイルや書きためたメモを、エディタを離れず、そのままLLMへ渡せます。
