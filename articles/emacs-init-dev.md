@@ -12,6 +12,7 @@ published: true
 この記事は [codedchords.dev](https://codedchords.dev/blog/2026/10/emacs-init-el/04-emacs-init-dev/) からの転載です。連載「AI時代のEmacs設定術」の第4回です。
 
 - 前回: [AI時代のEmacs設定術(3): EmacsでClaude CodeとLLMを操る](https://zenn.dev/yostos/articles/emacs-init-claude-code)
+- 次回: [AI時代のEmacs設定術(5): Emacsでメール・Web・RSSを読む](https://zenn.dev/yostos/articles/emacs-init-reading)
 :::
 
 開発用のエディタといえばVS Codeです。Emacsで同じことをしようとすると、パッケージをいくつも集めて、長い設定を書かなければならない。そう考えて、Emacsを候補から外している人も多いのではないでしょうか。
